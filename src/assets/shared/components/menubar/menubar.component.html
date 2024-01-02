@@ -1,0 +1,14 @@
+<p-menubar [model]="items" #navbar>
+
+  <ng-template pTemplate="start">
+    <img src="/assets/shared/images/apple.png">
+  </ng-template>
+
+  <ng-template pTemplate="end" >
+    <div class="end" *ngIf="showEndComponent">
+      <img src="/assets/shared/images/carrinho-vazio.png" alt="">
+      <input type="text" pInputText placeholder="Pesquisar">
+    </div>
+  </ng-template>
+
+</p-menubar>

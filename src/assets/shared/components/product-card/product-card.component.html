@@ -1,0 +1,33 @@
+<div class="container page-wrapper">
+  <div class="page-inner">
+    <div class="row">
+      <div class="el-wrapper">
+        <div class="box-up">
+          <img class="img" src="{{productInfo.image }}" alt="">
+          <div class="img-info">
+            <div class="info-inner" >
+              <span class="p-name">{{productInfo.name}}</span>
+              <span class="p-company" *ngIf="productInfo.quantity > 0">Disponivel: {{productInfo.quantity}} und</span>
+            </div>
+            <div class="a-size unavaible" *ngIf="productInfo.quantity <= 0">Indisponível</div>
+            <div class="a-size" *ngIf="productInfo.quantity > 0"> <span class="size">{{productInfo.description}}</span></div>
+          </div>
+        </div>
+
+        <div class="box-down" >
+          <div class="h-bg" *ngIf="productInfo.quantity > 0">
+            <div class="h-bg-inner"></div>
+          </div>
+
+          <a class="cart" [ngStyle]="{cursor: productInfo.quantity > 0 ? 'pointer' : 'default'}">
+            <span class="price" >R$ {{productInfo.price}}</span>
+            <span class="add-to-cart" *ngIf="productInfo.quantity > 0">
+              <span class="txt">Adicionar</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
